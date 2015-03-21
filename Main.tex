@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage{upgreek}
+\usepackage[left=2.2cm,right=2.2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\bf\Huge}{Session \thechapter \; : }{0.6pc}{}
+\usepackage{multirow}
+\usepackage{chngpage}
+\newcommand{\ud}{\,\mathrm{d}}  % pour d?inir le symbole de diff?entiation en non italicis? ex : \ud f / \ud t = df/dt
+\usepackage[pdftex]{graphicx}
+\usepackage{arydshln}
+\usepackage{lastpage}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[hyphens]{url}
+\usepackage{lmodern}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{circuitikz} % pour les circuits électriques
+\usepackage{pgfplots} % pour les graphiques
+\usetikzlibrary{arrows,shadows}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage[numbered,framed,autolinebreaks,useliterate]{sty/mcode}
+\usepackage[]{units}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{eurosym} %symbole euro
+\usepackage[final]{pdfpages} %Pour la partie annexe
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\pagestyle{fancy}
+\fancyhead[C]{}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage$\,\,\,$on \pageref{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\usepackage[Glenn]{fncychap}
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{0pt}% <------------- changemeent ici (était 50pt avant)
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+\makeatother
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\begin{document}
+
+	\input{Couverture.tex}
+
+\tableofcontents \newpage
+
+
+\newpage \bibliographystyle{plain}
+\bibliography{Bibliography2}
+
+
+\begin{appendix}
+
+\newpage
+
+\end{appendix}
+
+\end{document}
